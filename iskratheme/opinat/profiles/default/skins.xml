@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="Opinat Theme">
+
+ <object name="opinat_custom_images"
+    meta_type="Filesystem Directory View"
+    directory="iskratheme.opinat:skins/opinat_custom_images"/>
+
+ <skin-path name="Opinat Theme" based-on="Sunburst Theme">
+  <layer name="opinat_custom_images"
+     insert-after="custom"/>
+ </skin-path>
+
+</object>

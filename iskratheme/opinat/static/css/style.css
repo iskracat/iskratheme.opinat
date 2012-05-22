@@ -1,0 +1,2333 @@
+/**
+ * HTML5 ✰ Boilerplate
+ *
+ * style.css contains a reset, font normalization and some base styles.
+ *
+ * Credit is left where credit is due.
+ * Much inspiration was taken from these projects:
+ * - yui.yahooapis.com/2.8.1/build/base/base.css
+ * - camendesign.com/design/
+ * - praegnanz.de/weblog/htmlcssjs-kickstart
+ */
+
+
+/**
+ * html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+ * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
+ * html5doctor.com/html-5-reset-stylesheet/
+ */
+
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+#content-core p {
+  font-size: 13;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+
+/**
+ * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
+ */
+
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif; }
+
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+
+/**
+ * Minimal base styles.
+ */
+
+/* Always force a scrollbar in non-IE */
+html { overflow-y: scroll; }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+
+/* Remove margins for navigation lists */
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+
+td { vertical-align: top; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+
+/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* Colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+   border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/**
+ * You might tweak these..
+ */
+
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  /* Set your base font here, to apply evenly */
+  /* font-family: Georgia, serif;  */
+}
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+/*h1, h2, h3, h4, h5, h6 { font-weight: bold; }*/
+
+a, a:active, a:visited { color: #CCCC00; text-decoration: none}
+a:hover { color: #CCCC00; }
+
+
+/**
+ * Non-semantic helper classes: please define your styles before this section.
+ */
+
+/* For image replacement */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { display: none; }
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+   j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+.clearfix { zoom: 1; }
+
+
+/**
+ * Media queries for responsive design.
+ *
+ * These follow after primary styles so they will successfully override.
+ */
+
+@media all and (orientation:portrait) {
+  /* Style adjustments for portrait mode goes here */
+
+}
+
+@media all and (orientation:landscape) {
+  /* Style adjustments for landscape mode goes here */
+
+}
+
+/* Grade-A Mobile Browsers (Opera Mobile, Mobile Safari, Android Chrome)
+   consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
+@media screen and (max-device-width: 480px) {
+
+
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you: j.mp/textsizeadjust */
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+
+
+@font-face {
+    font-family: 'JosefinSansBoldItalic';
+    src: url('../fonts/josefinsans-bolditalic-webfont.eot');
+    src: url('../fonts/josefinsans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/josefinsans-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/josefinsans-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/josefinsans-bolditalic-webfont.svg#JosefinSansBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TerminalDosisRegular';
+    src: url('../fonts/terminaldosis-regular-webfont.eot');
+    src: url('../fonts/terminaldosis-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/terminaldosis-regular-webfont.woff') format('woff'),
+         url('../fonts/terminaldosis-regular-webfont.ttf') format('truetype'),
+         url('../fonts/terminaldosis-regular-webfont.svg#TerminalDosisBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TerminalDosisBold';
+    src: url('../fonts/terminaldosis-bold-webfont.eot');
+    src: url('../fonts/terminaldosis-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/terminaldosis-bold-webfont.woff') format('woff'),
+         url('../fonts/terminaldosis-bold-webfont.ttf') format('truetype'),
+         url('../fonts/terminaldosis-bold-webfont.svg#TerminalDosisBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TerminalDosisSemiBold';
+    src: url('../fonts/terminaldosis-semibold-webfont.eot');
+    src: url('../fonts/terminaldosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/terminaldosis-semibold-webfont.woff') format('woff'),
+         url('../fonts/terminaldosis-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/terminaldosis-semibold-webfont.svg#TerminalDosisSemiBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/*FONS*/
+header {margin: 21px 0px 0px 0px; display: block;}
+
+body {background-color: #04314b; font-size: 13px;}
+/*.section-front-page {background-image: url("++theme++iskratheme.opinat/imatges/fons_groc_home.png"); background-repeat: repeat-x;}*/
+/*  body {background-color: #04314b; }*/
+/*.section-que-es-nps {background-image: url("++theme++iskratheme.opinat/imatges/fons_groc_principal.png"); background-repeat: repeat-x;}
+.section-caracteristicas {background-image: url("++theme++iskratheme.opinat/imatges/fons_groc_principal.png"); background-repeat: repeat-x;}
+.section-como-funciona {background-image: url("++theme++iskratheme.opinat/imatges/fons_groc_principal.png"); background-repeat: repeat-x;}
+.section-soluciones {background-image: url("++theme++iskratheme.opinat/imatges/fons_groc_principal.png"); background-repeat: repeat-x;}
+*/
+
+
+
+#container {
+    width: 960px;
+    margin: 0 auto ;
+}
+
+
+#portal-columns {
+ background: url("++theme++iskratheme.opinat/imatges/llums_fons.gif") no-repeat 0 0;
+padding-top: 40px;
+z-index:-3;
+}
+
+
+
+/*HEADER HOME*/
+header .fila1 {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+header .fila2 {
+  
+}
+header .fila2 {
+  margin-top: 4px;
+}
+.headergap {display: block; height:360px;}
+
+
+header #SeccioTel { 
+  color: #50a6c4;
+  font-size: 24px;
+  text-decoration: none;
+  font-family: TerminalDosisSemiBold; 
+}  
+
+header #SeccioMail { 
+  color: #50a6c4;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: TerminalDosisSemiBold;  
+  margin-top: 6px;
+}
+
+#portal-languageselector {
+    list-style-type: none;
+        margin-top: 10px;
+}
+
+#portal-languageselector li {
+    display: inline;
+    font-family: TerminalDosisBold;
+    text-align: center;  
+    vertical-align: middle;
+
+    padding: 5px 10px;
+    border-radius: 0.5em;
+      background-color: #044361;
+      margin-right: 15px;
+}
+
+#portal-languageselector li.currentLanguage{
+    background-color: #cfce01;
+}
+
+#portal-languageselector li.currentLanguage a:active,
+#portal-languageselector li.currentLanguage a:visited,
+#portal-languageselector li.currentLanguage a:link,
+#portal-languageselector li.currentLanguage a:hover
+ {
+    color: #003333 !important;    
+}
+
+header #SeccioLangCas { 
+  color: #003333;
+  background-color: #cfce01;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: TerminalDosisBold;
+  margin-top: 6px;
+  text-align: center;  
+  vertical-align: middle;
+  height:24px;
+  width: 50px;
+  border-radius: 6px;
+  line-height: 22px; 
+  text-decoration: none;
+  float: left;
+}  
+header #SeccioLangCas a {
+  text-decoration:none;
+  color: #003333;
+}
+
+header #SeccioLangEng { 
+  color:  #50a6c4;
+  float: left;
+  background-color: #044361;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: TerminalDosisBold;  
+  margin-top: 6px;
+  text-align: center;
+  height:24px;
+  width: 50px;
+  border-radius: 6px;
+  line-height: 22px;
+  margin-left: 20px; 
+}  
+header #SeccioLangEng a {text-decoration:none;  color:  #50a6c4;}
+
+
+header #SeccioClients { 
+  color: #FFF;
+  /*background-color: #2fa6cd;*/
+  font-size: 16px;
+  text-decoration: none;
+  font-family: TerminalDosisSemiBold;  
+  margin-top: 6px;
+  float: right;
+  text-align: center;
+  height:22px;
+  width: 150px;
+  border-radius: 6px; 
+  background-color: #2fa6cd;
+  background-image: -moz-linear-gradient(left,#71cadc, #378ab2, #378ab2, #378ab2);
+  color: #333;
+
+}  
+header #SeccioClients a {text-decoration:none;  color:  #FFF;}
+
+header nav#menuSeccions {} /*background-color: #044361;*/
+header nav#menuSeccions ul {list-style: none outside none;margin-left:50px; margin-top: 1px;}
+header nav#menuSeccions li {display: inline;  padding:0px 0; }
+header nav#menuSeccions li a {
+    color: #87a5b3;
+  font-family: TerminalDosisRegular;
+    /*background-color: #50a6c4;*/
+    font-size: 15px;
+    text-decoration: none; 
+    display: inline-block;
+    padding: 0px 22px;
+    white-space: normal;
+    margin-top: -5px;
+  }
+
+#menuSeccions {
+    border-radius: 0.5em;
+    background-color: #044361;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#menuSeccions li:first-child a {padding-left: 0px; border:none;}
+#menuSeccions li:last-child {border-right: none;}
+#menuSeccions ul li ul {position: absolute;list-style: none;float: left; left:190px; z-index: 99; border:none;}
+#menuSeccions ul li ul li {display: list-item; margin: 1px 0px 0px 0px;}
+#menuSeccions ul li ul li {border:none;}
+#menuSeccions ul li ul li:first-child a {padding: 1px 20px;}
+#menuSeccions ul li ul li a {padding: 1px 20px;}
+#menuSeccions ul li ul li a:hover {color:white;}
+.negatiu {background-color: #333;}
+
+
+
+/*header nav#menuPrincipal {margin-top: -10px;}*/
+header nav#menuPrincipal ul {list-style: none outside none;}
+header nav#menuPrincipal li {display: inline;}
+header nav#menuPrincipal li a {font-family: TerminalDosisBold;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    /*min-width: 7em;*/
+   /* padding: 10px 20px;*/
+    padding: 10px 20px;
+    white-space: normal;
+    margin-left: 0px;}
+
+html.js body.template-document_view div#container div#header-wrapper.row header div.row div.cell div.row div.cell nav#menuPrincipal ul#portal-globalnav li#portaltab-index_html.selected a {
+  color: #a1aa31;
+  min-width: 3em;
+  margin-left: -15px;
+}
+
+/*CONTENT*/
+#main { 
+ /* margin-top:30px;*/
+  border-radius: 30px;
+  /*width: 870px;*/
+  /*margin-left: 10px;*/
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+}
+
+.section-front-page #main { 
+  height: 800px;
+  background: #1d3a5a;
+  background-image: -moz-linear-gradient(left,#053149, #026085, #026085, #053149);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0.0, #053149), color-stop(0.33, #026085), color-stop(0.66, #026085), color-stop(1.0, #053149));
+
+  color: #333;
+  
+}
+
+.imatge_baner {
+    height: 175px;
+}
+
+#HomeNPS { 
+  color: #FFF;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: TerminalDosisRegular;  
+
+}  
+
+#HomeNPSPregunta { 
+  color: #cfce01;
+  font-size: 35px;
+  font-weight:800;
+  font-family: TerminalDosisSemiBold;  
+}  
+
+.titolbanner {
+  font-family:  TerminalDosisBold;
+  color: #04314b;
+  font-size: 30px;
+  margin-top: 30px; 
+  margin-left: 90px;  
+  line-height: 30px;
+  z-index:9998;
+}
+
+.textbanner {
+  font-family:  TerminalDosisBold;
+  font-size: 15px;
+  text-align: left;
+  color: #04314b;
+  line-height: 16px;
+  /*margin-top:150px;*/
+  z-index:9999;
+}
+
+.titolbannerdetall {
+  font-family:  TerminalDosisBold;
+  color: #04314b;
+  font-size: 30px;
+  margin-top: 25px; 
+  /*margin-left: 90px; */ 
+  line-height: 30px;
+  z-index:9998;
+}
+
+.textbannerdetall {
+  font-family:  TerminalDosisBold;
+  font-size: 15px;
+  text-align: left;
+  color: #04314b;
+  line-height: 16px;
+ /* margin-top: 70px;*/
+  z-index:9999;
+}
+
+#caract {text-decoration:none; }
+#caractcap
+{ 
+  color: #FFF;
+  font-size: 21px;
+  text-decoration: none;
+  font-family: TerminalDosisBold;  
+/* margin-top: 20px;*/
+}  
+#caracttext 
+{ 
+  color: #FFF;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: TerminalDosisRegular;  
+  width: 210px;
+ /* margin-top: -20px;*/
+}  
+html.js body.template-document_view div#container header div.row div.row div#pregunta div#pregunta div.row div#caract.cell a img {
+  margin-left: 20px;
+}
+html.js body.template-document_view div#container header div.row div.row div#pregunta div#pregunta div.row div#funciona.cell a img {
+   margin-left: 20px;
+}
+
+html.js body.template-document_view div#container header div.row div.row div#pregunta div#pregunta div.row div#solucionesico.cell a img {
+   margin-left: 20px;
+}
+
+#funciona {text-decoration:none; margin-top: 0px;}
+#funcionacap
+{ 
+  color: #FFF;
+  font-size: 21px;
+  text-decoration: none;
+  font-family: TerminalDosisBold;  
+  /*margin-top: -190px;*/
+}  
+#funcionatext 
+{ 
+  color: #FFF;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: TerminalDosisRegular;  
+  width: 210px;
+  /*margin-top: -155px; */ 
+}  
+
+
+#solucionesico {text-decoration:none; margin-top: 0px;}
+#solucionescap
+{ 
+  color: #FFF;
+  font-size: 21px;
+  text-decoration: none;
+  font-family: TerminalDosisBold;  
+  /*margin-top: -90px;*/
+}  
+#solucionestext 
+{ 
+  color: #FFF;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: TerminalDosisRegular;  
+  width: 200px;
+  /*margin-top: -55px;*/  
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titol_funciona {
+    color: #77d0ee;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+    margin: 10px 0px 0px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#content_image_solu {
+  margin-left: 100px;
+  margin-top: -84px;
+}
+
+
+
+
+.caixasolu {
+margin-left: 40px;
+margin-top: 30px;
+padding: 20px;
+width: 120px;
+float: left;
+
+}
+#content_image_solu {
+  width: 200px;
+  height: 80px;
+  background-color: #12495c;
+  border-radius: 6px;
+}
+
+
+/** PEU **/
+footer .peuopinat {
+  font-family: TerminalDosisRegular;
+  font-size: 14px;
+  color: #65cbff;
+  line-height: 100%;
+  padding-bottom: 2px;
+  padding-top: 1px;
+  margin-top: 20px; 
+  /*height: 40px;
+  width: 497px;*/   
+}
+
+footer .contactemail {
+  font-family: TerminalDosisRegular;
+  font-size: 14px;
+  color: #66ccff;
+  margin-top: 55px; 
+}
+footer .contactemail a {color: #66ccff; text-decoration: none;}
+
+
+#nps_opinat {
+  background-color: #CCCC00;
+  border-radius: 0.5em;
+  color: #04314B;
+  padding: 20px;
+  width: 601px;
+  text-align: center;
+}
+
+#nps_opinat .pregunta {
+
+  margin: 10px auto 10px auto;
+}
+
+
+#nps_opinat  .motius {
+  margin: 0px auto 0px auto;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+#nps_opinat  .motius h5{
+  text-align: center;
+  font-family: TerminalDosisBold;  
+}
+
+
+#nps_opinat .pregunta td {
+  width: 40px;
+}
+
+#nps_opinat .botons {
+  margin-top: 10px;
+}
+
+#nps_opinat .pregunta input[type="radio"] {
+  margin-left: 5px;
+}
+
+#nps_opinat .botons input {
+  color: #fff;
+  background-color: #04314B;
+  border: 0;
+  padding: 5px;
+  border-radius: 0.3em;
+  margin-right: 20px;
+}
+
+/*PORTLETS*/
+#pruebenps {
+  height: 80px;
+  width: 220px;
+  border-radius: 6px;
+  background-color: #ffb200;
+  margin-top: 20px;
+  z-index: 9999;
+}
+
+#pruebenps a {
+  color: #FFF;
+  text-decoration: none; 
+}
+
+#pruebenps img {
+  margin-top: 20px;
+  margin-left: 148px;
+}
+
+#pruebenps #text {
+  font-family: TerminalDosisRegular; 
+  font-size:22px;
+  color: #FFF;
+  margin-top: -62px;
+  margin-left: 14px; 
+  line-height: 20px;
+}
+
+
+#ventajas {
+  height: 60px;
+  width: 220px;
+  border-radius: 6px;
+  background-color: #0f6db6;
+  margin-top: 10px;
+  z-index: 9998;
+}
+
+#ventajas a {
+  color: #FFF;
+  text-decoration: none; 
+}
+
+#ventajas img {
+  margin-top: 15px;
+  margin-left: 176px;
+}
+
+#ventajas #text {
+  font-family: TerminalDosisRegular; font-size:22px;
+  color: #FFF;
+  margin-top: -40px;
+  margin-left: 14px; 
+  line-height: 20px;
+}
+
+
+#news {
+  height: 60px;
+  width: 220px;
+  border-radius: 6px;
+  background-color: #0f6db6;
+  margin-top: 10px;
+  z-index: 9997;
+}
+
+#news a {
+  color: #FFF;
+  text-decoration: none; 
+
+}
+
+#news img {
+  margin-top: 15px;
+  margin-left: 176px;
+}
+
+#news #text {
+  font-family: TerminalDosisRegular; font-size:22px;
+  color: #FFF;
+  margin-top: -30px;
+  margin-left: 14px; 
+  line-height: 20px; 
+}
+
+#real {
+  height: 150px;
+  width: 200px;
+  border-radius: 6px;
+  background-color: #0f6db6;
+}
+
+#real a {
+  color: #FFF;
+  text-decoration: none; 
+}
+
+#real img {
+  margin-top: 0px;
+}
+
+#real #text {
+  font-family: TerminalDosisRegular; font-size:14px;
+  color: #FFF;
+  margin-top: 34px;
+  margin-left: 14px; 
+}
+
+#real #textser {
+  font-family: TerminalDosisBold; font-size:14px;
+  color: #FFF;
+  float:left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#real #textrec {
+  font-family: TerminalDosisBold; font-size:14px;
+  color: #FFF;
+  float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#realcaixaser {
+    padding-top: 15px;
+  text-align: center;
+  height: 34px;
+  width: 90px;
+  background-color: #05314b;
+  margin-left: 0px;
+  margin-top: 10px;
+  font-size: 1.4em;
+  color: #CCCC00;
+  float:left;
+}
+
+#realcaixareb {
+  float:left;
+    padding-top: 15px;
+  text-align: center;
+  height: 34px;
+  width: 90px;
+  background-color: #05314b;
+  margin-left: 0px;
+  margin-top: 5px;
+    font-size: 1.4em;
+  color: #CCCC00;
+}
+
+
+#clientes {
+  width: 190px;
+  border-radius: 6px;
+  background-color: #0f6db6;
+  margin-top: 30px;
+  padding: 15px;
+  display: inline-block;
+}
+
+#clientes a {
+  color: #FFF;
+  text-decoration: none; 
+}
+
+
+#clientes #text {
+  font-family: TerminalDosisRegular; font-size:14px;
+  color: #FFF;
+    margin-left: 0;
+    margin-top: 0px;
+}
+
+
+
+#containernivell{
+  height: 100%;
+  width: 940px;
+  background-color: #1e88ae;
+  border-radius: 10px;
+}
+
+
+/*CONTINGUTS*/
+html.js body.template-folder_listing section-caracteristicas div#container header div.row div#main h1#parent-fieldname-title.documentFirstHeading
+{
+font-family:TerminalDosis-ExtraBold;
+  font-size:24px;
+  color: #FFF;
+}
+
+
+
+.portaltype-document #main {padding:20px 30px;}
+.portaltype-document .documentFirstHeading {
+    font-family: TerminalDosisBold;
+    color: #FFF;
+    font-size: 34px;
+    margin:0 0 20px 0;
+
+  }
+
+  .portaltype-document .documentDescription {
+    font-family: TerminalDosisBold;
+    color: #c4df9b;
+    font-size: 24px;
+    margin:0 0 20px 0;
+  }
+
+
+  #parent-fieldname-description.documentDescription {
+    font-family: TerminalDosisBold;
+    color: #cfce01;
+    font-size: 24px;
+    margin:0 0 20px 0;
+
+  }
+
+
+
+#parent-fieldname-text {
+  font-family: TerminalDosisRegular;
+    color: #FFF;
+    font-size: 18px;
+    margin:0 0 20px 0;
+    /*padding: 60px;*/
+
+  }
+
+
+
+#parent-fieldname-title.documentFirstHeading
+ {
+    font-family: TerminalDosisBold;
+    color: #FFF;
+    font-size: 34px;
+    margin: 0px 40px 20px 0px;
+  }
+
+
+
+ html.js body.template-folder_listing div#container div#main div#content-core dl dt span.summary a.contenttype-file
+ {
+      font-family: TerminalDosisBold;
+    color: #cfce01;
+    font-size: 18px;
+    margin: 0px 50px 100px 20px;
+    text-decoration: none;
+ } 
+
+
+
+ html.js body.template-folder_listing div#container div#main div#content-core dl dt span.summary img
+ {
+   /*display: none;*/
+   float: right;
+  /* background-image: url("++theme++iskratheme.opinat/imatges/download.png");*/
+ }
+
+
+ html.js body.template-folder_listing div#container div#main div#content-core dl dt span.summary
+ {
+  margin-top: 20px; 
+ }
+
+html.js body.template-folder_listing div#container div#main div#content-core dl dt{
+ background-color: #115268; 
+ margin: 20px 0px 0px 50px; 
+ display: block; 
+ width: 760px;
+}
+
+html.js body.template-folder_listing div#container div#main div#content-core dl dd {
+ background-color: #115268; 
+ margin: 0px 0px 0px 50px;
+ display: block; 
+ width: 760px; 
+}
+
+html.js body.template-folder_listing div#container div#main div#content-core dl dd span.description {
+ background-color: #115268;
+ border-radius: 3;
+ font-family: TerminalDosisRegular;
+ font-size: 16px; 
+ margin: 0px 0px 0px 20px;
+ color: #FFF;
+ display: block; 
+ width: 620px;
+ height: 65px;
+}
+
+html.js body.template-folder_listing div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+   margin-top:30px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 60px 75px;
+}
+
+
+
+#breadcrumbs-home a{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 16px;
+  color: #8db3c3;
+  text-decoration: none; 
+ /* margin: -100px 0px 0px 25px;*/
+}
+
+#breadcrumbs-home2 a{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 16px;
+  color: #8db3c3;
+  text-decoration: none; 
+ /* margin: -100px 0px 0px 25px;*/
+}
+
+#breadcrumbs-1 a{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 16px;
+  color: #8db3c3;
+  text-decoration: none; 
+ /* margin: -100px 0px 0px 25px;*/
+}
+
+.breadcrumbSeparator{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 20px;
+  text-decoration: none; 
+  color: #8db3c3;
+}
+
+.breadcrumbSeparator2{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 20px;
+  text-decoration: none; 
+  color: #8db3c3;
+}
+
+.breadcrumbSeparator{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 20px;
+  text-decoration: none; 
+  color: #8db3c3;
+  
+
+}
+
+#breadcrumbs-current {
+    font-family: TerminalDosisSemiBold;  
+  font-size: 16px;
+  text-decoration: none; 
+  color: #FFF;
+  
+}
+
+#portal-breadcrumbs span#breadcrumbs a
+{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 16px;
+  text-decoration: none; 
+  color: #8db3c3;
+}
+
+#portal-breadcrumbs span#breadcrumbs a
+{
+  font-family: TerminalDosisSemiBold;  
+  font-size: 16px;
+  text-decoration: none; 
+  color: #8db3c3;
+}
+
+#portal-breadcrumbs span#breadcrumbs-you-are-here
+{
+    display: none;
+}
+
+
+/*html.js body.template-document_view div#container header div#container div#portal-columns.row div#portal-column-content.cell 
+{ 
+ /* margin-top:30px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+}*/
+
+
+html.js body.template-folder_listing div#container  div#container div#portal-columns.row {
+   /*margin-top: -210px;*/
+}
+
+html.js body.template-folder_listing div#container  div#container div#portal-columns.row div#portal-column-content.cell div div#content{
+    margin-top:30px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 60px 60px 60px 60px;
+
+}
+
+
+
+
+
+
+html.js body.template-folder_listing div#container  div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dd {
+ background-color:#12475b;
+ margin: 0px 0px 0px 50px;
+ display: block; 
+ width: 760px; 
+
+}
+
+
+
+
+ html.js body.template-folder_listing div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dt span.summary img
+ {
+   /*display: none;*/
+   margin-top: 0px;
+   margin-right: 20px;
+   height: 74px;
+   width: 74px;
+   float: right;
+  /* background-image: url("++theme++iskratheme.opinat/imatges/download.png");*/
+ }
+
+html.js body.template-folder_listing div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dt span.summary a.contenttype-file
+{
+      font-family: TerminalDosisBold;
+    color: #cfce01;
+    font-size: 24px;
+    margin: 20px 50px 20px 27px;
+    text-decoration: none;
+ } 
+
+
+
+html.js body.template-folder_listing div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dt span.summary {
+  margin-top: 40px; 
+}
+
+
+html.js body.template-folder_listing div#container div#main div#content-core dl dt{
+ background-color: #115268; 
+ margin: 20px 0px 0px 50px; 
+ display: block; 
+ width: 760px;
+}
+
+html.js body.template-folder_listing div#container  div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dd {
+ background-color: #115268; 
+ padding: 40px 40px 40px 40px;
+ margin-left: -10px;
+ margin-top: -40px;
+ margin-bottom: 20px;
+ display: block; 
+ width: 760px; 
+ border-radius: 5px;
+
+}
+
+html.js body.template-folder_listing div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dt {
+ /* background-color: #115268;*/
+ padding: 20px 20px 20px 20px;
+ margin-left: -10px;
+ margin-bottom: 20px;
+ display: block; 
+ min-height: 70px;
+ width: 760px; 
+ border-radius: 5px;
+  background-image: url("++theme++iskratheme.opinat/imatges/fons_caixa_recurs.png");
+  background-repeat: repeat;
+
+}
+
+
+html.js body.template-folder_listing div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dd span.description {
+  /*background-color: #115268;*/
+ font-family: TerminalDosisRegular;
+ font-size: 16px; 
+ margin: 0px 0px 0px 0px;
+ color: #FFF;
+ display: block; 
+ width: 620px;
+ height: 65px; 
+ /*  background-image: url("++theme++iskratheme.opinat/imatges/fons_caixa_recurs.png");
+  background-repeat: repeat;*/
+
+}
+
+
+.section-formacion div#content-core dl dd span.description {
+  /*background-color: #115268;*/
+ font-family: TerminalDosisRegular;
+ font-size: 16px; 
+ margin: 0px 0px 0px 0px;
+ color: #FFF;
+ display: block; 
+ width: 620px;
+ height: 65px; 
+   /*background-image: url("++theme++iskratheme.opinat/imatges/fons_caixa_recurs.png");
+  background-repeat: repeat;*/
+}
+
+
+
+html.js body.template-folder_summary_view div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core div.tileItem p.tileBody span.description {
+    /*background-color: #115268;*/
+ font-family: TerminalDosisRegular;
+ font-size: 16px; 
+ margin: 0px 0px 0px 10px;
+ color: #FFF;
+ display: block; 
+ width: 620px;
+ height: 65px; 
+}
+
+/*html.js body.template-folder_summary_view div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core div.tileItem h2.tileHeadline a.summary
+ {
+     font-family: TerminalDosisBold;
+    color: #cfce01;
+    font-size: 22px;
+    margin-left: 30px;
+    text-decoration: none;
+ } */
+
+
+html.js body.template-folder_listing div#container  div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dt span.summary a.contenttype-file
+ {
+     font-family: TerminalDosisBold;
+    color: #cfce01;
+    font-size: 22px;
+    margin-left: 32px;
+    /*font-weight:700;*/
+   /* margin: 0px 50px 100px 20px;*/
+    text-decoration: none;
+ } 
+
+/*html.js body.template-folder_summary_view div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core div.tileItem a img.tileImage { visibility: hidden; }*/
+
+.section-news div.tileItem {  
+    margin-bottom: 30px;
+}
+
+
+.section-news span.documentModified {
+     font-family: TerminalDosisRegular;
+ font-size: 16px; 
+ margin: 0px 0px 0px 10px;
+ color: #FFF;
+ display: block; 
+ margin-left: 20px; 
+}
+
+.section-news #parent-fieldname-description.documentDescription {
+  display: none;
+}
+
+.section-news #content-core div.tileItem p.tileFooter a {
+    display: none;
+}
+
+.section-news #content-core img {
+    padding: 20px;
+    margin: 0 20px 0 0;
+    background-color: #18384a;
+    border-radius: 0.5em;
+    width: 60px;
+    height: 60px;
+}
+
+#__mce_tmp {
+    display: none;
+}
+
+.section-news .documentDescription {
+    color: #cfce01 !important;
+}
+
+.section-news #content-core div.tileItem h2.tileHeadline a.summary {
+    font-family: TerminalDosisBold;
+    color: #cfce01;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.section-news div.tileItem h2.tileHeadline {
+     margin-left: 20px;
+}
+
+
+.section-news #content-core div.tileItem p.tileBody span.description {
+    display: none;
+}
+
+
+
+
+html.js body.template-folder_listing div#container  div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core dl dt span.summary img
+ {
+
+display: none;
+}
+
+
+ .caixa {
+margin-left: 0px;
+/*margin-top: 30px;*/
+padding: 30px;
+width: 210px;
+height: 200px;
+float: left;
+
+/*background-color: #2C2C2C;*/
+}
+
+
+.imatges_cas_exit {
+  width: 220px;
+  height: 80px;
+  background-color: #FFF;
+  border-radius: 5px;
+  line-height: 80px;
+}
+
+.titol_cas_exit {
+    color: #FFFFFF;
+    font-family: TerminalDosisBold;
+    font-size: 18px;
+    margin: 10px 10px 10px 0px;
+}
+
+.text_cas_exit {
+    color: #FFFFFF;
+    font-family: TerminalDosisRegular;
+    font-size: 14px;
+}
+
+#cont_text_solu {
+    width: 200px;
+    height: 80px;
+    margin-top: 20px;
+}
+
+.text_solu {
+    color: #FFFFFF;
+    font-family: TerminalDosisRegular;
+    font-size: 14px;
+}
+
+.mes_cas_exit {
+    color: #cfce01;
+    font-family: TerminalDosisRegular;
+    font-size: 14px;
+}
+
+.mes_cas_exit a {
+  color: #cfce01;
+    text-decoration:none;
+}
+
+.caixacar {
+/*margin-left: 20px;*/
+padding: 20px;
+width: 330px;
+float: left;
+
+/*background-color: #2C2C2C;*/
+}
+
+.caixacar img {
+    float: left;
+}
+
+#titol_gran_caract {
+   color: #FFF;
+    font-family: TerminalDosisBold;
+    font-size: 28px;
+    margin-left: 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /*padding-bottom: 50px;*/
+}
+
+.titol_caract {
+    color: #cfce01;
+    font-family: TerminalDosisBold;
+    font-size: 20px;
+    margin: 10px 0px 0px 0;
+    text-decoration: none;
+}
+
+
+a.titol_caract {
+    color: #cfce01;
+    text-decoration: none;
+}
+
+.text_caract {
+    color: #FFFFFF;
+    font-family: TerminalDosisRegular;
+    font-size: 14px;
+    width: 300px;
+}
+#content_image_caract {
+  margin-left: 90px;
+}
+
+
+.caixafunciona {
+margin-left: 30px;
+margin-top: 30px;
+padding: 20px;
+width: 100px;
+text-align: center;
+}
+
+#content_image_funciona {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 120px;
+}
+
+html.js body.template-llistat_funciona div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core div.tileItem img {
+    margin-left: 20px;
+}
+
+
+.caixafunciona2 {
+margin-top: 30px;
+padding: 20px;
+width: 130px;
+}
+.caixafunciona2 img {
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter:alpha(opacity=5);
+}
+.caixafunciona2_actiu img {
+    opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=5);
+}
+
+
+.fletxa_funciona2 {
+  margin-left: 105px;
+  margin-top: -65px;
+  background-image: url("++theme++iskratheme.opinat/imatges/fletxa.png");
+  background-repeat: no-repeat;
+  height:32px;
+  width:56px;
+}
+
+
+.caixafunciona3 {
+margin-top: 30px;
+padding: 20px;
+width: 130px;
+}
+.caixafunciona3 img {
+   opacity: 1;
+    -moz-opacity: 1;
+    filter:alpha(opacity=5);
+}
+
+
+
+nav#llistaFunciona ul {list-style: none outside none; }
+nav#llistaFunciona li {display: inline;float: left;}
+nav#llistaFunciona li:last-child .fletxa_funciona2{visibility: hidden;}
+
+
+nav#llistaFunciona1 ul {list-style: none outside none; }
+nav#llistaFunciona1 li {display: inline;float: left;}
+nav#llistaFunciona1 li:last-child .fletxa_funciona1{visibility: hidden;}
+
+
+.fletxa_funciona1 {
+  margin-left: 128px;
+  margin-top: -65px;
+  background-image: url("++theme++iskratheme.opinat/imatges/fletxa.png");
+  background-repeat: no-repeat;
+  height:32px;
+  width:56px;
+}
+
+/*.caixafunciona:last-child .fletxa_funciona1 {
+    visibility: hidden;
+}*/
+
+
+/*.llistaFunciona li .fletxa_funciona_fitxa {
+    background-image: url("++theme++iskratheme.opinat/imatges/fletxa.png");
+    background-repeat: no-repeat;
+}
+nav#llistaFunciona li:last-child .fletxa_funciona2 {    
+}*/
+
+
+
+
+
+
+.titol_funciona {
+    color: #77d0ee;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+    margin: 10px 0px 0px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+a.titol_funciona {
+    color: #77d0ee;
+    text-decoration: none;
+}
+
+.text_funciona {
+    color: #FFFFFF;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+}
+
+
+.caixasolu {
+margin-left: 40px;
+margin-top: 30px;
+padding: 20px;
+width: 120px;
+float: left;
+
+}
+
+.content_image_solu {
+  width: 200px;
+  height: 80px;
+ /* background-color: #12495c;*/
+  border-radius: 6px;
+  background-image: url("++theme++iskratheme.opinat/imatges/fons_caixa_recurs.png");
+  background-repeat: repeat;
+}
+
+.section-soluciones .content_image_solu img {
+    margin-left: 22px;
+    margin-top: 18px;
+    vertical-align: middle;
+}
+
+.portaltype-soluciones .content_image_solu {
+      height: 120px;
+}
+
+.portaltype-soluciones .content_image_solu img {
+    margin-left: 25px;
+    margin-top: 35px;
+    vertical-align: middle;
+}
+
+
+.section-casos-de-exito div.imatges_cas_exit img{
+  margin-left: 20px;
+  vertical-align: middle; 
+}
+
+
+
+
+html.js body.template-llistat_casexit div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content{
+    margin-top:10px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 30px 30px 30px 30px;
+
+}
+
+
+
+html.js body.template-llistat_caract div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+   margin-top:10px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 30px 30px 30px 30px;
+
+}
+
+
+html.js body.template-newsitem_view div#container div#portal-columns.row div#portal-column-content.cell div div#content div#parent-fieldname-description.documentDescription {
+    color: #FFF;
+    visibility: visible;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+}
+
+
+html.js body.template-llistat_funciona div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+   margin-top:10px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 30px 30px 30px 30px;
+}
+
+html.js body.template-llistat_funciona div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content div.documentDescription {
+  visibility: hidden;
+}
+
+html.js body.template-llistat_funciona div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content h1.documentFirstHeading {
+  visibility: hidden;
+}
+
+html.js body.template-llistat_soluciones div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+   margin-top:10px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 30px 30px 30px 30px;
+}
+
+html.js body.template-llistat_soluciones div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content div.documentDescription {
+  visibility: hidden;
+}
+
+html.js body.template-llistat_soluciones div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content h1.documentFirstHeading {
+  visibility: hidden;
+}
+
+
+/*html.js body.template-document_view div#container header div#container div#portal-columns.row div#portal-column-two.cell {
+  margin-top: 180px;
+}*/
+
+html.js body.template-llistat_casexit div#container header div#container div#portal-columns.row {
+  /* margin-top: -210px;*/
+}
+
+html.js body.template-document_view div#container header div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+  /*margin-top:30px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 60px 60px 60px 60px;*/
+}
+
+html.js body.template-document_view div#container header div#container div#portal-columns.row {
+  /*margin-top: -210px;*/
+}
+
+html.js body.template-document_view div#container header div#container div#portal-columns.row div#portal-column-content.cell{
+  /*margin-top: -30px;*/
+}
+
+html.js body.template-document_view div#container header div#container div#portal-columns.row div#portal-column-content.cell{
+  /*margin-top: 200px;*/
+}
+
+html.js body.template-document_view div#container header div#container div#portal-columns.row {
+  
+}
+
+
+.section-quienes-somos #content {
+  margin-top:15px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 60px 75px;
+}
+
+
+
+
+.section-consultoria #content {
+  margin-top:15px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+  padding: 60px 75px;
+}
+
+
+
+
+.section-news #content {
+  margin-top:15px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+  padding: 60px 75px;
+  display: inline-block;
+}
+
+html.js body.template-file_view div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+    margin-top:15px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+  padding: 10px 30px;
+}
+
+html.js body.template-file_view div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core p span {
+   /* display: none;*/
+}
+
+section-news #description
+{
+    display: none;
+}
+
+.section-formacion .summary {
+
+    display: inline-block;
+    width: 100%;
+}
+
+.section-formacion .summary img {
+    float: right;
+}
+
+.section-formacion .summary a.contenttype-file {
+    display: inline-block;
+}
+
+.section-formacion #content-core dt {
+    display: inline-block;
+}
+
+.section-formacion #casosdexit {
+  display: none;
+}
+.section-formacion #nuestroNps {
+  display: none;
+}
+
+.section-news #casosdexit {
+  display: none;
+}
+.section-news #nuestroNps {
+  display: none;
+}
+
+#content .documentFirstHeading {
+    font-family: TerminalDosisBold;
+    font-size: 24px;
+    color: white;
+    margin-top: 10px;
+}
+
+#content-core {
+    color: white;
+    font-family: TerminalDosisRegular;
+     font-size: 13pt;
+}
+
+#parent-fieldname-formPrologue {
+    color: white;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+}
+
+#pfg-fieldwrapper {
+    color: white;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+    line-height: 1.3em;
+}
+
+#pfg-fieldwrapper .formQuestion {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#pfg-fieldwrapper .field {
+    margin-top: 20px;
+}
+
+.social_buttons {
+    margin-top: 30px;
+}
+
+.portalMessage {
+    margin: 20px;
+    padding: 10px;
+    color: white;
+    background-color: #044361;
+    border-radius: 0.5em;
+}
+
+.portalMessage .error {
+    margin: 20px;
+    padding: 10px;
+    color: white;
+    background-color: #994361;
+    border-radius: 0.5em;
+}
+
+.fieldErrorBox {
+    color: 111;
+    font-size: 1.1em;
+}
+
+/*.section-casos-de-exito #content {
+  margin-top:30px;
+  border-radius: 30px;
+  background: rgb(255,255,255); 
+  background-color: rgba(255,255,255,0.1);
+  padding: 60px 60px 60px 60px;
+}*/
+
+html.js body.template-llistat_soluciones div#container div#portal-columns.row div#portal-column-content.cell div div#content h1.documentFirstHeading{
+  display: none;
+}
+
+html.js body.template-llistat_soluciones div#container div#portal-columns.row div#portal-column-content.cell div div#content div.documentDescription{
+  display: none;
+}
+
+.section-las-10-ventajas-del-nps #content {
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 15px;
+    padding: 60px 75px;
+    display: inline-block;
+}
+
+.section-casos-de-exito #casosdexit {
+  display: none;
+}
+.section-casos-de-exito #nuestroNps {
+  display: none;
+}
+
+.section-que-es-nps #content {
+  margin-top:30px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+  padding: 60px 60px 60px 60px;
+}
+
+
+.section-como-funciona #content {
+  margin-top:30px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+ /* padding: 10px 60px 60px 10px;*/
+   padding: 40px 20px 40px 20px;
+  display: inline-block;
+}
+
+.section-soluciones #content {
+    display: inline-block;
+  margin-top:30px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+  padding: 40px 20px 40px 20px;
+  /*height: 400px;*/
+}
+
+
+
+.section-caracteristicas #content {
+  margin-top:30px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat;
+  padding: 60px;
+  display: inline-block;
+}
+
+.section-caracteristicas #casosdexit {
+  display: none;
+}
+.section-caracteristicas #nuestroNps {
+  display: none;
+}
+
+.section-como-funciona #casosdexit {
+  display: none;
+}
+
+html.js body.template-llistat_funciona div#container div#portal-columns.row div#portal-column-content.cell div div#content h1.documentFirstHeading {
+  display: none;
+}
+
+html.js body.template-llistat_funciona div#container div#portal-columns.row div#portal-column-content.cell div div#content div.documentDescription {
+  display: none;
+}
+
+
+.section-como-funciona #nuestroNps {
+ display: none;
+}
+
+.section-soluciones  #casosdexit {
+  display: none;
+}
+.section-soluciones #nuestroNps {
+  display: none;
+}
+
+/*.section-caracteristicas-1 #portal-column-content { 
+
+  height: 800px;
+  background: #1d3a5a;
+  background-image: -moz-linear-gradient(left,#053149, #026085, #026085, #053149);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0.0, #053149), color-stop(0.33, #026085), color-stop(0.66, #026085), color-stop(1.0, #053149));
+
+  color: #333;
+  
+}*/
+
+/*
+.section-front-page #portal-column-content { 
+
+  height: 800px;
+  background: #1d3a5a;
+  background-image: -moz-linear-gradient(left,#053149, #026085, #026085, #053149);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0.0, #053149), color-stop(0.33, #026085), color-stop(0.66, #026085), color-stop(1.0, #053149));
+
+  color: #333;
+  
+}*/
+
+
+
+#nuestroNps {margin-top: 50px;}
+
+footer {margin-top: 50px;}
+footer .icoopinatpeu { margin-top: 10px;}
+footer .legal {  font-family: TerminalDosisRegular; font-size: 14px;color: #017daa; }
+footer .linpeu { }
+footer .legallink { font-size: 16px; color: #66ccff; text-decoration: none;}
+
+
+.developedby {
+  font-family: TerminalDosisRegular;
+  font-size: 14px;
+  color: #00669c;
+  padding-right:30px;
+}
+
+.logoiskra {
+}
+
+.logohtml5 {
+}
+footer .icolk {}
+
+.logo_portlet {
+  width:90px;
+  float:left; 
+  margin-right:2px; 
+  margin-left: 2px
+}
+
+.titol_portlet_logos {
+  font-family: TerminalDosisRegular; font-size:14px;
+  color: #FFF;
+  margin-bottom: 10px;
+}
+
+.icolktext
+{
+  font-family: TerminalDosisRegular;
+  font-size: 14px;
+  color: #4ca3cf;
+}
+
+#cap_primera {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#wrapper_baner {
+    background-color: #cfce01;
+}
+
+#wrapper_carousel {
+    background-color: #cfce01;
+}
+
+#baner1rnivell {
+ z-index:10; 
+ width: 960px;
+ margin: 0 auto;
+ /*min-height: 175px;*/
+}
+
+#baner {
+    width: 960px;
+    margin: 0 auto;
+ /*min-height: 175px;*/
+} 
+
+#casosdexit {
+/*  margin-top: -50px;*/
+}
+
+html.js body.template-llistat_caract div#container div#portal-columns.row div#portal-column-content.cell div div#content h1.documentFirstHeading {
+  display: none;
+}
+
+html.js body.template-llistat_caract div#container div#portal-columns.row div#portal-column-content.cell div div#content div.documentDescription {
+  display: none;
+}
+
+
+.imatgestipus {}
+.imatgestipus ul {list-style: none outside none;}
+.imatgestipus li {display: inline; padding: 8px 8px;}
+
+
+/*CASOS EXIT*/
+/*#cliseparacio {margin-top: 50px;}*/
+
+#clilin{margin-top: 30px;}
+
+.ceclifoto{margin-top: 30px; text-align:right}
+
+.ceclinom{margin-top: 100px; font-family: TerminalDosisRegular; font-size:24px; color:#FFF; }
+.ceclicarrec{margin-top: 140px; font-family: TerminalDosisRegular; 
+font-size:15px; color:#FFF;}
+.ceclicometes{margin-top: 30px;}
+.ceclifrase{margin-top: 60px; font-family: TerminalDosisRegular; font-size:26px; color:#cfce3f;}
+.celinsep {margin-top:50px;margin-bottom:20px;}
+
+
+.cetitolbloc{font-family: TerminalDosisBold; font-size:34px; 
+    color:#FFF; margin-bottom:20px;}
+
+
+#ceimatgebloc { 
+    /*background-color: #18445a;*/
+    min-height: 110px;
+/*    width: 260px;*/
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #18384a;
+}
+
+#ceimatgebloc img {
+   display: block;
+   margin: auto; 
+}
+
+
+.cetextbloc{font-family: TerminalDosisRegular; font-size:18px; color:#FFF; margin-bottom:20px;}
+
+.cetextblocgroc{background: url('++theme++iskratheme.opinat/imatges/cometespt.png') no-repeat; font-family: TerminalDosisRegular; font-size:24px; color:#c6c743;  padding-top: 40px; margin-bottom:20px;}
+
+.portaltype-funcionalidad .cetextblocgroc  {
+    background: none;
+    padding-top: 0px;
+}
+
+.portaltype-caracteristicas .cetextblocgroc  {
+    background: none;
+    padding-top: 0px;
+}
+
+.portaltype-soluciones .cetextblocgroc  {
+    background: none;
+    padding-top: 0px;
+}
+
+.section-casos-de-exito #content {
+    margin-top:30px;
+  border-radius: 30px;
+  background: url('++theme++iskratheme.opinat/imatges/10percent.png') repeat; 
+  padding: 60px 60px 60px 60px;
+  display: inline-block;
+}
+
+#cefonsblau { 
+    background-color: #0f6db6;
+    border-radius: 0.5em;
+    display: inline-block;
+    width: 800px;
+    padding-top: 20px;
+    margin-left: 20px;
+}
+
+
+html.js body.template-file_view div#container div#portal-columns.row div#portal-column-content.cell div div#content h1#parent-fieldname-title.documentFirstHeading {
+    margin-top: 30px;
+}
+
+html.js body.template-file_view div#container div#portal-columns.row div#portal-column-content.cell div div#content div#content-core p span span.discreet {
+    display: none;
+}
+
+dl.portlet dt.portletHeader span {
+    display: none;
+}
+
+html.js body.template-llistat_casexit div#container div#portal-columns.row div#portal-column-content.cell div div#content {
+    padding: 40px;
+}
+
+#quees_text {
+  font-family: TerminalDosisRegular;
+  font-size: 14px;
+  color: #FFF;
+}
+
+#quees_img {
+  padding-left: 20px;
+}
+
+#quees_img_text {
+    font-family: TerminalDosisRegular;
+  font-size: 14px;
+  color: #FFF;
+   padding-left: 20px;
+}
+
+.titol_funciona_2nivell {
+  color: #77d0ee;
+    font-family: TerminalDosisRegular;
+    font-size: 18px;
+   /* margin-top: 50px;*/
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.imatgefunciona {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+
+#contentcasexit {
+    height:300px;
+}
+
+.contentcasexithome {
+    height:250px;
+}
+
+.clifotocehome{margin-top: 30px; 
+                margin-left: 200px;
+                width:100px; 
+                height:100px;
+                text-align:center;
+                vertical-align: center;
+               }
+#cliseparacio {
+    margin-top: 20px;  
+    background-image: url("++theme++iskratheme.opinat/imatges/lincli.png");
+    margin-bottom: 20px;  
+    background-repeat: no-repeat;
+    height:6px;
+    }
+
+
+.clifoto{
+    width: 56px;
+    margin-left: 50px; 
+    float: right;
+    display: inline-block;
+}
+
+.clifoto img {
+    margin-left: 50px;
+}
+
+
+
+.clinom{
+    float: right; 
+    margin-top: 50px; 
+    text-align:right; 
+    font-family: JosefinaSansBoldItalic; 
+    font-size:18px; 
+    color:#FFF; 
+}
+
+.clicarrec{
+    margin-top: 5px; 
+    float: right; 
+    text-align:right; 
+    font-family: JosefinaSansBoldItalic; 
+    font-size:16px; 
+    color:#FFF;
+    width: ;
+}
+
+.clicometes{
+    background-image: url("++theme++iskratheme.opinat/imatges/cometes.png");
+    background-repeat: no-repeat;
+    height:25px;
+    width: 46px;
+}
+.clifrase{margin-top: 5px; font-family: TerminalDosisRegular; font-size:24px; color:#FFF;}
+
+.wrapper_carousel {
+    width: 620px;
+}
+
+.carrousel_esquerra {
+    margin-left: 46px;
+    width: 150px;
+    float: left;
+    padding: 20px;
+}
+
+.carrousel_dreta {
+    width: 290px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    border-left: 1px solid #abd5e9;
+    margin-top: 37px;
+    margin-bottom: 37px;
+}
+
+.section-quienes-somos #content-core img {
+    background-color: #18384A;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    margin: 0 20px 0 0;
+    padding: 20px;
+}
+
+.newsImageContainer {
+    float: left;
+    width: auto;
+}
+
+.contentcasexithome .nivo-controlNav {
+    display: none;
+}
+
+.section-quiere-recibir-nuestra-newsletter #content {
+    background: url("++theme++iskratheme.opinat/imatges/10percent.png") repeat scroll 0 0 transparent;
+    border-radius: 30px 30px 30px 30px;
+    margin-top: 15px;
+    padding: 60px 75px;
+}
+
+.portaltype-formfolder #content, .portaltype-formthankspage #content {
+    min-height: 600px;
+}
+
+.portaltype-formfolder #content input {
+  color: #8DB3C3;
+  background-color: #white;
+  border: 0;
+  padding: 5px;
+  margin-top: 20px;
+  border-radius: 0.3em;
+}
+
+.portaltype-formfolder #content input[type=submit] {
+  background-color: #CFCE01;
+  color: #04314B;
+}
+
+.portaltype-formthankspage #content p {
+    color: #CFCE01;
+    font-family: TerminalDosisBold;
+    font-size: 24px;
+    margin: 0 0 20px;
+}
+
+.portaltype-formfolder #content p {
+  magin-top: 10px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#content blockquote {
+  font-size: 13px;
+  color: white;
+  margin-top: 10px;
+}
+
+.section-front-page #parent-fieldname-title {
+  display: none;
+}
+
+.section-front-page .colorgroc {
+  color: #CCCC00;
+}
+
+#nps_opinat_powered_by {
+  font-family: TerminalDosisRegular;
+  font-size: 13px;
+}
+
+#nps_opinat_powered_by a, 
+#nps_opinat_powered_by a:active, 
+#nps_opinat_powered_by a:visited {
+  color: #04314B;
+}

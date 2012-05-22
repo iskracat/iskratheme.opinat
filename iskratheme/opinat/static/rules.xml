@@ -1,0 +1,102 @@
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <!-- El tema per la pagina principal -->
+    <!-- <theme href="home.html" css:if-content=".section-front-page" /> -->
+    
+    <!-- The default theme, used for standard Plone web pages -->
+    <theme href="index.html" css:if-content="#visual-portal-wrapper" />
+
+
+    <!-- Rules applying to a standard Plone web page -->
+    <rules css:if-content="#visual-portal-wrapper">
+
+        <!-- Add meta tags -->
+        <!-- <drop theme="/html/head/meta" /> -->
+        <after content="/html/head/meta" theme="/html/head/meta" />
+        
+        <drop content="/html/head/meta" if-content="(//*[@name='viewport'])"/>
+        
+        <!-- Copy style, script and link tags in the order they appear in the content -->
+        <before
+            content="/html/head/style | /html/head/script | /html/head/link"
+            theme-children="/html/head"
+            />
+
+        <drop theme="/html/head/style" />
+        <!-- <drop theme="/html/head/script" /> -->
+        <!-- <drop theme="/html/head/link" /> -->
+
+        <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+        <merge attributes="class" css:content="body" css:theme="body" />
+        <copy attributes="id dir" css:content="body" css:theme="body" />
+
+        <!-- Logo (link target) 
+        <copy attributes="href" css:content="#portal-logo" css:theme="#logo" />
+        <copy attributes="href" css:content="#portal-viewletinicial" css:theme="#salut" />-->
+
+        <replace css:content='#portal-siteactions' css:theme-children='#menuSeccions' />
+
+        <!-- Site actions -->
+       
+
+        <!-- Global navigation -->
+        <replace css:content='#portal-globalnav' css:theme-children='#menuPrincipal' />
+
+       <!-- <replace css:content='#baner' css:theme-children='#bannerGran' css:if-content="body.section-front-page"/>-->
+
+        <replace css:content-children='#baner' css:theme-children='#baner' css:if-content="body.section-front-page"/>
+
+        <replace css:content-children='#baner1rnivell' css:theme-children='#baner1rnivell' />
+
+        <replace css:content-children='#portal-languageselector' css:theme-children='#portal-languageselector' />
+
+		<!--<replace css:content='#pregunta' css:theme-children='#pregunta' css:if-content="body.section-front-page"/>-->
+        
+		<replace css:content='#casosdexit' css:theme-children='#casosdexit' css:if-content="body.section-front-page"/>
+		
+		<replace css:content='#nuestroNps' css:theme-children='#nuestroNps' css:if-content="body.section-front-page"/>
+
+        <replace css:content='#llistatcasosdexit' css:theme-children='#llistatcasosdexit' css:if-content="body.section-casos-de-exito"/>
+    
+        <!-- Menu de casos d'exit 
+        <replace css:content-children='#viewlet-viewletinicial' css:theme-children='#salut' />-->
+       <!-- <replace css:content='#baner' css:theme-children='#HomeNPS' />
+        <replace css:content='#casosdexit' css:theme-children='#HomeNPS' />
+        <replace css:content='#caracteristicas' css:theme-children='#HomeNPSPregunta' />-->
+
+        <replace method="raw" css:theme="#top-viewlet-holder" css:content="#viewlet-above-content"/>
+        
+
+        <!-- Breadcrumbs -->
+        <replace css:content-children='#portal-breadcrumbs' css:theme-children='#breadcrumbs' />
+        <drop css:content-children='#portal-breadcrumbs' css:if-content="body.section-front-page" />
+
+        <!-- Document Content -->
+        <!--<replace css:content-children="#content" css:theme-children="#main" />-->
+       <!-- <drop css:content-children="#content" css:if-content="body.section-casos-de-exito"/>-->
+
+        <before css:content="#edit-bar" css:theme="#document-content" />
+        <before css:content=".portalMessage" css:theme="#document-content" />
+
+        <!-- Columns 
+        <replace css:content-children="#portal-column-one > *" css:theme-children="#column-one" />-->
+<!--        <replace css:content-children="#portal-column-two > *" css:theme-children="#column-two" css:if-content="body.section-front-page"/>-->
+
+        <!--<replace css:content-children="#portal-columns" css:theme-children="#portal-columns" css:if-content="body.section-front-page"/>-->
+
+<replace css:content-children="#portal-columns" css:theme-children="#portal-columns" />
+
+<!--<copy content='//*[@id="portal-column-two"]'
+    theme='//*[@id="rightcolumn"]' />-->
+
+
+		<replace css:theme-children="#footer" css:content-children="#portal-footer" />
+
+        
+    </rules>
+
+</rules>

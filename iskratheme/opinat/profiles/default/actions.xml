@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <object name="site_actions" meta_type="CMF Action Category">
+  <object name="somos" meta_type="CMF Action" i18n:domain="iskratheme.opinat">
+   <property name="title" i18n:translate="QUIENES SOMOS">QUIENES SOMOS</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/quienes-somos</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="consultoria" meta_type="CMF Action"
+     i18n:domain="iskratheme.opinat">
+   <property name="title" i18n:translate="CONSULTORIA">CONSULTORIA</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/consultoria</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="noticias" meta_type="CMF Action" i18n:domain="iskratheme.opinat">
+   <property name="title" i18n:translate="NOTICIAS">NOTICIAS</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/news</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="recursos" meta_type="CMF Action" i18n:domain="iskratheme.opinat">
+   <property name="title" i18n:translate="FORMACION">FORMACION</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/recursos</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+  <object name="casexit" meta_type="CMF Action" i18n:domain="iskratheme.opinat">
+   <property name="title" i18n:translate="CASOS DE EXITO">CASOS DE EXITO</property>
+   <property name="description" i18n:translate=""></property>
+   <property
+      name="url_expr">string:${globals_view/navigationRootUrl}/casos-de-exito</property>
+   <property name="link_target"></property>
+   <property name="icon_expr"></property>
+   <property name="available_expr"></property>
+   <property name="permissions"/>
+   <property name="visible">True</property>
+  </object>
+ </object>
+</object>

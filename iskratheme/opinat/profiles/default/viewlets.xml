@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object>
+
+
+<order manager="plone.portalfooter" skinname="Opinat Theme"
+         based-on="Plone Default">
+
+         <viewlet name="opinat.footer" insert-before="*"/>
+</order>    	
+         
+ <order manager="plone.portaltop" skinname="Opinat Theme" based-on="Plone Default">
+    <viewlet name="opinat.viewletinicial" />
+  </order>
+
+<order manager="plone.portalfooter" skinname="Opinat Theme" based-on="Plone Default">
+    <viewlet name="opinat.viewletpeu" />
+  </order>
+
+
+</object>
